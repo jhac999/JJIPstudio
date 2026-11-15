@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>甲甲 IP 核心打造点 · 综合优势与原创双核</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0c0e12;
+      --card-bg: rgba(20, 24, 33, 0.75);
+      --card-hover: rgba(28, 34, 48, 0.9);
+      --border: rgba(255, 255, 255, 0.08);
+      --border-accent: rgba(229, 169, 93, 0.45);
+      --amber: #e5a95d;
+      --amber-glow: rgba(229, 169, 93, 0.2);
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --font-display: 'Cinzel', 'Noto Sans SC', serif;
+      --font-body: 'Noto Sans SC', -apple-system, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      line-height: 1.65;
+      padding: 30px 20px 80px;
+      background-image: 
+        radial-gradient(circle at 10% 10%, rgba(229, 169, 93, 0.06) 0%, transparent 45%),
+        radial-gradient(circle at 90% 40%, rgba(148, 163, 184, 0.04) 0%, transparent 50%);
+      background-attachment: fixed;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* 顶部灵魂主旨横幅 */
+    .hero-banner {
+      background: linear-gradient(135deg, rgba(229, 169, 93, 0.12) 0%, rgba(20, 24, 33, 0.8) 100%);
+      border: 1px solid var(--border-accent);
+      border-radius: 16px;
+      padding: 24px 30px;
+      margin-bottom: 35px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      box-shadow: 0 10px 30px -10px var(--amber-glow);
+    }
+
+    .hero-banner-title {
+      font-size: 1.55rem;
+      font-weight: 900;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .hero-banner-title span {
+      color: var(--amber);
+      font-size: 1.7rem;
+    }
+
+    .hero-tag {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--amber);
+      background: rgba(229, 169, 93, 0.15);
+      border: 1px solid var(--amber);
+      padding: 5px 14px;
+      border-radius: 6px;
+      letter-spacing: 0.08em;
+    }
+
+    /* 艺人核心展示区（左右分栏） */
+    .hero-profile {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 30px;
+      margin-bottom: 45px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px;
+      backdrop-filter: blur(16px);
+      align-items: center;
+    }
+
+    @media (max-width: 800px) {
+      .hero-profile { grid-template-columns: 1fr; }
+    }
+
+    .poster-wrap {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.8);
+    }
+
+    .poster-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .poster-wrap:hover .poster-img {
+      transform: scale(1.02);
+    }
+
+    .poster-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 12px 14px;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, transparent 100%);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    .profile-info h1 {
+      font-size: 2.1rem;
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .profile-info .sub {
+      color: var(--amber);
+      font-size: 0.95rem;
+      font-weight: 500;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .profile-quote {
+      font-size: 0.95rem;
+      color: #cbd5e1;
+      line-height: 1.7;
+      margin-bottom: 20px;
+      border-left: 2px solid var(--amber);
+      padding-left: 16px;
+    }
+
+    .synthesis-highlight {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 10px;
+      padding: 14px 18px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .synthesis-highlight strong {
+      color: #fff;
+    }
+
+    /* 板块标题 */
+    .section-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      padding-top: 10px;
+    }
+
+    .section-head-num {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      color: var(--amber);
+      font-weight: 800;
+    }
+
+    .section-head-title {
+      font-size: 1.25rem;
+      color: #fff;
+      font-weight: 700;
+    }
+
+    /* 四大优势卡片网格 */
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+      margin-bottom: 45px;
+    }
+
+    .advantage-box {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px 20px;
+      transition: all 0.25s ease;
+      backdrop-filter: blur(10px);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .advantage-box:hover {
+      border-color: var(--border-accent);
+      background: var(--card-hover);
+      transform: translateY(-3px);
+    }
+
+    .adv-idx {
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: var(--amber);
+      letter-spacing: 0.1em;
+      margin-bottom: 6px;
+    }
+
+    .adv-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .adv-core {
+      font-size: 0.85rem;
+      color: var(--amber);
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .adv-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* 原创双核音频播放区 */
+    .songs-section {
+      background: var(--card-bg);
+      border: 1px solid var(--border-accent);
+      border-radius: 16px;
+      padding: 28px;
+      margin-bottom: 45px;
+      backdrop-filter: blur(14px);
+    }
+
+    .songs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 22px;
+      margin-top: 15px;
+    }
+
+    .song-card {
+      background: rgba(12, 14, 20, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .song-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      padding-bottom: 10px;
+    }
+
+    .song-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .song-meta {
+      font-size: 0.75rem;
+      color: var(--amber);
+      font-weight: 600;
+    }
+
+    .song-info {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .song-info strong {
+      color: #fff;
+    }
+
+    audio {
+      width: 100%;
+      height: 38px;
+      border-radius: 6px;
+      outline: none;
+      filter: invert(0.88) hue-rotate(180deg);
+    }
+
+    /* 受众群体分析表 */
+    .table-wrap {
+      overflow-x: auto;
+      margin-bottom: 45px;
+    }
+
+    .aud-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      font-size: 0.86rem;
+    }
+
+    .aud-table th, .aud-table td {
+      padding: 15px 18px;
+      text-align: left;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .aud-table th {
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--amber);
+      font-weight: 600;
+      font-size: 0.8rem;
+    }
+
+    .aud-table tr:last-child td { border-bottom: none; }
+
+    .role-pill {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      background: rgba(229, 169, 93, 0.15);
+      color: var(--amber);
+      border: 1px solid rgba(229, 169, 93, 0.3);
+    }
+
+    /* 页脚 */
+    footer {
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      color: var(--text-dim);
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- 灵魂核心主旨 -->
+    <div class="hero-banner">
+      <div class="hero-banner-title">
+        <span>“单个不突出，放在一起就有了”</span>
+      </div>
+      <div class="hero-tag">甲甲 IP 综合竞争优势</div>
+    </div>
+
+    <!-- 艺人视觉与核心基底展示 -->
+    <div class="hero-profile">
+      <div class="poster-wrap">
+        <img class="poster-img" src="./assets/images/poster.png" alt="甲甲 · 花儿音乐会正式海报">
+        <div class="poster-caption">甲甲（阿米甲甲）· 花儿专场视觉主海报</div>
+      </div>
+      <div class="profile-info">
+        <h1>甲甲（阿米甲甲）</h1>
+        <div class="sub">
+          <span>当代独立音乐人</span>
+          <span>•</span>
+          <span>声音制作人</span>
+        </div>
+        <p class="profile-quote" style="font-size: 1.25rem; font-weight: 700; color: #fff; letter-spacing: 0.05em; border-left: 3px solid var(--amber); padding-left: 14px; margin: 18px 0;">
+          “我是一个自由的歌手”
+        </p>
+        <div class="synthesis-highlight">
+          <strong>综合优势闭环</strong>：都市原创作品 + 彝族小帅哥视觉 + 少数民族真诚笑容 + 咬笛独占听觉记忆点。
+        </div>
+      </div>
+    </div>
+
+    <!-- 板块一：四大核心打造点梳理 -->
+    <div class="section-head">
+      <span class="section-head-num">01</span>
+      <h2 class="section-head-title">四大核心打造点（同类中的综合优势）</h2>
+    </div>
+
+    <div class="grid-4">
+
+      <!-- 1 -->
+      <div class="advantage-box">
+        <div class="adv-idx">ADVANTAGE 01</div>
+        <h3 class="adv-title">1. 都市彝族歌手作品</h3>
+        <div class="adv-core">原创双核：《花儿》《女孩》</div>
+        <p class="adv-desc">
+          打破传统民族歌手“走出大山、放羊、乡愁哭诉”的历史羁绊。城市里还没有真正歌唱写字楼、地铁与现代都市生活的彝族歌手，甲甲填补生态位空白。
+        </p>
+      </div>
+
+      <!-- 2 -->
+      <div class="advantage-box">
+        <div class="adv-idx">ADVANTAGE 02</div>
+        <h3 class="adv-title">2. 彝族歌手小帅哥</h3>
+        <div class="adv-core">联动彝族新锐先锋设计师</div>
+        <p class="adv-desc">
+          颠覆传统粗犷原生态刻板印象；立体骨相、痞帅松弛感。深度联动登上《Vogue》的“软山”冷银饰、“衣迪阿诺”高街廓形，将民族符号转化为当代潮奢。
+        </p>
+      </div>
+
+      <!-- 3 -->
+      <div class="advantage-box">
+        <div class="adv-idx">ADVANTAGE 03</div>
+        <h3 class="adv-title">3. 真诚纯粹的笑容</h3>
+        <div class="adv-core">少数民族天然优势 · 治愈反差</div>
+        <p class="adv-desc">
+          平时专注、克制、话少、略带冷峻的硬汉状态；偶一抬头的微笑展现出少数民族赤子之心般的纯粹清澈。这种巨大反差感，是击穿都市高压女性的情绪核弹。
+        </p>
+      </div>
+
+      <!-- 4 -->
+      <div class="advantage-box">
+        <div class="adv-idx">ADVANTAGE 04</div>
+        <h3 class="adv-title">4. 咬笛（克西尔）</h3>
+        <div class="adv-core">全网独占超级听觉记忆点</div>
+        <p class="adv-desc">
+          华语乐坛独一无二的器乐指纹。坚决执行“古器吹今曲”法则——吹奏现代流行与氛围和声过渡句，意到即收，如山风掠过现代大楼，闭眼即可识别。
+        </p>
+      </div>
+
+    </div>
+
+    <!-- 板块二：核心原创双核试听专区 -->
+    <div class="songs-section">
+      <div class="section-head" style="margin-top:0; padding-top:0;">
+        <span class="section-head-num">02</span>
+        <h2 class="section-head-title">核心原创双核作品（现场音源直接试听）</h2>
+      </div>
+
+      <div class="songs-grid">
+
+        <!-- 女孩 -->
+        <div class="song-card">
+          <div class="song-header">
+            <h3 class="song-title">《女孩》</h3>
+            <span class="song-meta">实测调性：A 小调 (Am) · 4分16秒</span>
+          </div>
+          <div class="song-info">
+            <p><strong>定位</strong>：核心作品 · 过往与遗憾线</p>
+            <p><strong>短视频钩子</strong>：开篇真实自白“这首歌我写了七年”，切入叙事烟嗓，击穿都市女性情感共鸣。</p>
+          </div>
+          <audio controls preload="metadata">
+            <source src="./assets/audio/girl.mp3" type="audio/mpeg">
+            您的浏览器不支持音频播放，音频文件：./assets/audio/girl.mp3
+          </audio>
+        </div>
+
+        <!-- 花儿 -->
+        <div class="song-card">
+          <div class="song-header">
+            <h3 class="song-title">《花儿》</h3>
+            <span class="song-meta">实测调性：#C 小调转 E 大调 · 3分54秒</span>
+          </div>
+          <div class="song-info">
+            <p><strong>定位</strong>：核心作品 · 本心与向往线</p>
+            <p><strong>专场主题曲</strong>：同名专场音乐会压轴曲，象征都市逆境中永不凋零的坚韧生命力与精神原乡。</p>
+          </div>
+          <audio controls preload="metadata">
+            <source src="./assets/audio/flower.mp3" type="audio/mpeg">
+            您的浏览器不支持音频播放，音频文件：./assets/audio/flower.mp3
+          </audio>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 板块三：受众群体精准画像分析 -->
+    <div class="section-head">
+      <span class="section-head-num">03</span>
+      <h2 class="section-head-title">四大核心受众群体精准画像</h2>
+    </div>
+
+    <div class="table-wrap">
+      <table class="aud-table">
+        <thead>
+          <tr>
+            <th style="width: 22%;">核心群体画像</th>
+            <th style="width: 16%;">商业生态位</th>
+            <th style="width: 32%;">核心心理动机与代偿需求</th>
+            <th style="width: 30%;">对应甲甲的哪个优势？</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <strong style="color:#fff;">1. 城市彝族女性</strong><br>
+              <span style="color:var(--text-dim); font-size:0.78rem;">20–45岁 · 白领/公职/创业</span>
+            </td>
+            <td><span class="role-pill">核心基本盘 · 购票主力</span></td>
+            <td>
+              <strong>渴望“被代表”</strong>：长期在城市中缺乏代表自己真实生活的现代声音；反感被猎奇与卖惨，需要体面、现代的同族文化代表。
+            </td>
+            <td>
+              <strong>优势 1（都市原创作品）</strong><br>
+              <strong>优势 2（设计师高街体面）</strong>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong style="color:#fff;">2. 泛都市质感女性</strong><br>
+              <span style="color:var(--text-dim); font-size:0.78rem;">20–45岁 · 小红书/抖音高知女性</span>
+            </td>
+            <td><span class="role-pill">流量放大器 · 推流主力</span></td>
+            <td>
+              <strong>逃离职场内卷</strong>：看腻了工业糖精，被“痞帅松弛 × 纯粹真诚笑容”吸引，寻找深夜的情绪避难所与安全感。
+            </td>
+            <td>
+              <strong>优势 2（痞帅小帅哥颜值）</strong><br>
+              <strong>优势 3（真诚治愈笑容）</strong>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong style="color:#fff;">3. 城市彝族潮流青年</strong><br>
+              <span style="color:var(--text-dim); font-size:0.78rem;">18–35岁 · 高校学生/街头潮人</span>
+            </td>
+            <td><span class="role-pill">圈层裂变 · 现场到场主力</span></td>
+            <td>
+              <strong>“我们的人出息了”</strong>：讨厌土味晚会，追求街头潮酷与高级审美，甲甲的酷感成为他们在汉族朋友中自豪吹牛的社交资本。
+            </td>
+            <td>
+              <strong>优势 2（高街潮牌联名）</strong><br>
+              <strong>优势 4（咬笛吹现代律动）</strong>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong style="color:#fff;">4. 高阶审美独立乐迷</strong><br>
+              <span style="color:var(--text-dim); font-size:0.78rem;">30–45+岁 · 朴树/谢霆锋歌迷</span>
+            </td>
+            <td><span class="role-pill">品质背书 · 口碑升格</span></td>
+            <td>
+              <strong>看重“真实人格”</strong>：零容忍塑料修音与虚假人设，认同不迎合算法的硬朗风骨、原声乐器质感与专业李杰制作底牌。
+            </td>
+            <td>
+              <strong>优势 1（原创作品生命力）</strong><br>
+              <strong>优势 4（咬笛真实乐器底牌）</strong>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 页脚 -->
+    <footer>
+      <span>甲甲 IP 专属运营梳理 · 综合优势版</span>
+      <span>监制：吉胡阿川</span>
+    </footer>
+
+  </div>
+
+</body>
+</html>
