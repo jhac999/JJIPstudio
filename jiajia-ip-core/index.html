@@ -373,6 +373,115 @@
       color: var(--text-dim);
       font-size: 0.8rem;
     }
+
+    /* 打印/PDF 专属高清输出优化 (无白边全黑奢华暗调 · 精准 2 页排版) */
+    @media print {
+      @page {
+        size: A4 portrait;
+        margin: 0 !important;
+      }
+      html {
+        background-color: #0c0e12 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      body {
+        background-color: #0c0e12 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        color: #f8fafc !important;
+        padding: 14mm 16mm 14mm 16mm !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+      }
+      .container {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      .hero-banner {
+        margin-bottom: 20px !important;
+        padding: 15px 22px !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+      .hero-profile {
+        display: grid !important;
+        grid-template-columns: 240px 1fr !important;
+        gap: 22px !important;
+        padding: 20px !important;
+        margin-bottom: 24px !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+      .poster-wrap {
+        max-width: 240px !important;
+      }
+      .poster-img {
+        max-height: 275px !important;
+        width: 100% !important;
+        object-fit: cover !important;
+      }
+      .songs-section {
+        padding: 20px 22px !important;
+        margin-bottom: 20px !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+        page-break-after: always !important;
+        break-after: page !important;
+      }
+      .songs-grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 16px !important;
+      }
+      .song-card {
+        padding: 14px 16px !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+      .grid-4 {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 14px !important;
+        margin-bottom: 22px !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+      .advantage-box {
+        padding: 15px !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+      .table-wrap {
+        margin-bottom: 22px !important;
+      }
+      .aud-table {
+        font-size: 0.8rem !important;
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+      }
+      .aud-table th, .aud-table td {
+        padding: 9px 12px !important;
+      }
+      .aud-table tr {
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+      .section-head {
+        margin-bottom: 12px !important;
+        padding-top: 4px !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+      footer {
+        padding-top: 14px !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+    }
+
   </style>
 </head>
 
